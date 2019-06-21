@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cloning Youtube Varilla and NodeJS",
   "main": "index.js", 
-  "script": {
+  "scripts": {
     "start": "nodemon --exec babel-node index.js --delay 2"
   },
   "author": "Jeong Suji",
