@@ -1,8 +1,7 @@
-import {videos} from "../db"
-
+import routes from "../routes";
 export const home = (req, res) => {
-    res.render("home", {pageTitle: "Home", videos });
-}
+  res.render("home", { pageTitle: "Home", videos });
+};
 //export const home = (req, res) => res.render("home", { pageTitle: "Home" });
 
 export const search = (req, res) => {
@@ -11,10 +10,18 @@ export const search = (req, res) => {
     const { query : {term:searchingBy}} = req; 
     //예전방식 res.render("search", { pageTitle: "Search", searchingBy: searchingBy });
     res.render("search", { pageTitle: "Search", searchingBy, videos });
-}
+};
 
-export const upload = (req, res) =>
+export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
+
+export const postUpload = (req, res) => {
+  const{
+    body: { file, title, description }
+  }=req;
+  //To Do: Upload and save video
+  res.redirect(routes.videoDetail(324393));
+}  
 
 export const videoDetail = (req, res) =>
   res.render("videoDetail", { pageTitle: "Video Detail" });
